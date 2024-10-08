@@ -606,16 +606,6 @@ h3{
 	margin: 0 19px 20px 1px;
 	float: left;
 }
-.list-1>li>a{
-	position: relative;
-	display: block;
-	color: #fff;
-	text-align: center;
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-}
 .slider1 a:hover{
 	color: #f5a4a5;
 }

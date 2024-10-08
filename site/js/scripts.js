@@ -14,7 +14,6 @@ include("js/preloadIMG.js");
 include('js/MathUtils.js');
 include('js/jquery.transform-0.9.3.min.js');
 include('js/bg.js');
-include("js/jquery.fancybox-1.3.4.pack.js");
 
 //----Include-Function----
 function include(url){ 
@@ -173,15 +172,6 @@ function hideSplashQ(){
    
     //*************** END SPLASH ******************//
    
-   
-   
-   //list_1-------------------------------------------------
-	$('.list_1 > li > a').hover(function(){
-    $(this).stop().animate({color:"#474747", marginLeft:5}, 300, "easeOutCubic")
-	}, function(){;
-    $(this).stop().animate({color:"#c8c8c8", marginLeft:0}, 300, "easeOutCubic");
-	})   
-    //end list-1-------------------------------------------------
 	
 	
    	//slider gallery----------------------------------------------
@@ -223,42 +213,6 @@ function hideSplashQ(){
 	})
 	
 	
-	//********** list-1 ***********//
-	$('.list-1>li>a').attr('rel','appendix')
-    .prepend('<span class="sitem_over"><strong></strong></span>')
-    $('.list-1>li>a').fancybox({
-        'transitionIn': 'elastic',
-    	'transitionOut': 'elastic',
-    	'speedIn': 500,
-    	'speedOut': 300,
-        'centerOnScroll': true,
-        'overlayColor': '#000'
-    });
-	
-	$('.list-1>li>a')
-    .find('strong').css('top','200px').end()
-    .hover(
-        function(){
-            if (!MSIE){
-                $(this).children('.sitem_over').css({display:'block',opacity:'0'}).stop().animate({'opacity':1}).end() 
-                .find('strong').css({'opacity':0}).stop().animate({'opacity':1,'top':'0'},350,'easeInOutExpo');
-            } else { 
-                $(this).children('.sitem_over').stop().show().end()
-                .find('strong').stop().show().css({'top':'0'});
-            }
-        },
-        function(){
-            if (!MSIE){
-                $(this).children('.sitem_over').stop().animate({'opacity':0},1000,'easeOutQuad',function(){$(this).children('.sitem_over').css({display:'none'})}).end()  
-                .find('strong').stop().animate({'opacity':0,'top':'200px'},1000,'easeOutQuad');  
-            } else {
-                $(this).children('.sitem_over').stop().hide().end()
-                .find('strong').stop().hide();
-            }            
-        }
-    );
-		
-	//********** end list-1 ***********//
 	//end slider gallery----------------------------------------------	
    
 	   
