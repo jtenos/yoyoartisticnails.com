@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pinyon+Script&family=Playfair+Display:wght@600;700&display=swap");
+
 :root {
   --pink-50: #fff0f7;
   --pink-100: #ffd7ea;
@@ -16,10 +18,19 @@
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
 .container {
@@ -155,6 +166,10 @@ body {
 .feature-grid,
 .service-grid {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.services-page .service-grid .card h2 {
+  font-family: "Pinyon Script", "Brush Script MT", cursive;
 }
 
 .contact-grid {
