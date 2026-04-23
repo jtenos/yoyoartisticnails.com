@@ -45,10 +45,23 @@ body {
 }
 
 .brand {
-  color: var(--pink-700);
-  font-size: 1.2rem;
-  font-weight: 700;
+  align-items: center;
+  display: inline-flex;
+  gap: 0.45rem;
+  line-height: 0;
   text-decoration: none;
+}
+
+.brand-mark {
+  display: block;
+  height: 2.15rem;
+  width: auto;
+}
+
+.brand-wordmark {
+  display: block;
+  height: 2.6rem;
+  width: auto;
 }
 
 .site-nav {
@@ -235,5 +248,9 @@ body {
   .nav-wrap {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .brand-wordmark {
+    height: 2.2rem;
   }
 }
