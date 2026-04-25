@@ -163,22 +163,52 @@ h6 {
   box-shadow: 0 6px 18px rgba(255, 134, 183, 0.12);
 }
 
-.info-grid,
-.feature-grid,
-.service-grid,
-.footer-grid,
-.contact-grid {
+info-grid,
+feature-grid,
+footer-grid,
+contact-grid {
   display: grid;
   gap: 1rem;
 }
 
-.info-grid {
+info-grid {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.feature-grid,
-.service-grid {
+feature-grid {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Services: one stacked card per row; each card contains a .service-row */
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* Row inside each service card: image + content */
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.service-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.service-content h2 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.service-section .price-list li {
+  padding: 0.55rem 0;
 }
 
 .services-page .service-grid .card h2 {
@@ -267,5 +297,18 @@ h6 {
 
   .brand-wordmark {
     height: 2.2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  /* On wide screens place image left and content right */
+  .service-row {
+    grid-template-columns: 360px 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .service-media {
+    max-width: 360px;
   }
 }
