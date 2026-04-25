@@ -252,7 +252,7 @@ feature-grid {
 .service-content h2 {
   margin-top: 0;
   margin-bottom: 0.6rem;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   line-height: 1.05;
 }
 
@@ -382,7 +382,7 @@ feature-grid {
 @media (min-width: 1200px) {
   /* slightly larger headings on very wide screens */
   .service-content h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 }
 
