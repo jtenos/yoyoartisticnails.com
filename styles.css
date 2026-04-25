@@ -147,6 +147,13 @@ h6 {
   padding: 2.3rem 0;
 }
 
+/* Use a decorative background for the main section so cards can show through */
+main.section {
+  background-image: url("/img/background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .alt-bg {
   background: var(--pink-50);
 }
@@ -162,11 +169,45 @@ h6 {
 }
 
 .card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 3px solid rgba(242, 202, 224, 0.65);
   border-radius: 16px;
   padding: 1rem;
-  box-shadow: 0 6px 18px rgba(255, 134, 183, 0.12);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(232, 74, 147, 0.06) inset;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  overflow: visible;
+}
+
+.card::before {
+  /* soft decorative glow / 3D rim */
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 20px;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(232,74,147,0.06), rgba(184,50,112,0.04));
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.card::after {
+  /* subtle beveled inner highlight to suggest a gentle 3D bevel */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow:
+    inset 0 10px 14px rgba(255, 255, 255, 0.48),
+    inset 0 -10px 14px rgba(0, 0, 0, 0.06),
+    inset 0 2px 0 rgba(255, 255, 255, 0.35);
+  /* a faint linear overlay to emphasize the beveled edge */
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.02));
 }
 
 info-grid,
@@ -242,8 +283,20 @@ feature-grid {
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;
-  border-bottom: 1px dashed var(--border);
   padding: 0.45rem 0;
+  position: relative;
+}
+
+.price-list li::after {
+  /* thin two-tone separator that reads on light and darker backgrounds */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(0,0,0,0.12) 50%, rgba(255,255,255,0.45) 100%);
+  pointer-events: none;
 }
 
 /* Invisible plus to equalize width where a visible "+" is not shown */
