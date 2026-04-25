@@ -252,7 +252,7 @@ feature-grid {
 .service-content h2 {
   margin-top: 0;
   margin-bottom: 0.6rem;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   line-height: 1.05;
 }
 
@@ -363,6 +363,61 @@ feature-grid {
 
   .brand-wordmark {
     height: 2.2rem;
+  }
+}
+
+/* Styles for service descriptions and notes (subtle, italic, readable) */
+.price-list li.has-desc {
+  display: block;
+  padding: 0.55rem 0;
+  position: relative;
+}
+
+.price-list li.has-desc .price-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.service-description {
+  margin: 0.35rem 0 0 0;
+  font-style: italic;
+  color: #6b6b6b;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.service-notes {
+  margin-top: 1.25rem;
+  font-style: italic;
+  color: #6b6b6b;
+  font-size: 0.95rem;
+}
+
+.service-notes p {
+  margin: 0.25rem 0;
+}
+
+/* Reserve space on the right so descriptions don't flow underneath prices */
+.price-row strong {
+  display: inline-block;
+  min-width: 6.5rem;
+  text-align: right;
+}
+
+.service-description {
+  margin-right: 7rem;
+}
+
+@media (max-width: 899px) {
+  .price-row strong {
+    min-width: 0;
+    text-align: right;
+  }
+
+  .service-description {
+    margin-right: 0;
   }
 }
 
