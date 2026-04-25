@@ -155,6 +155,12 @@ h6 {
   margin-top: 0;
 }
 
+/* Center title + intro on the services page */
+.services-page .container h1,
+.services-page .container .section-intro {
+  text-align: center;
+}
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -205,6 +211,8 @@ feature-grid {
 .service-content h2 {
   margin-top: 0;
   margin-bottom: 0.6rem;
+  font-size: 1.8rem;
+  line-height: 1.05;
 }
 
 .service-section .price-list li {
@@ -310,5 +318,30 @@ feature-grid {
 
   .service-media {
     max-width: 360px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* slightly larger headings on very wide screens */
+  .service-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Narrow screens: cap service images so they don't become too tall */
+@media (max-width: 899px) {
+  .service-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .service-media img {
+    max-height: 200px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
   }
 }
