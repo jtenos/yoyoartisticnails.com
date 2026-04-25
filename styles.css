@@ -20,7 +20,12 @@ body {
   margin: 0;
   font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: url("/img/background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   line-height: 1.6;
 }
 
@@ -93,9 +98,36 @@ h6 {
 }
 
 .hero {
-  background: linear-gradient(140deg, var(--pink-100), #ffeefe);
-  border-bottom: 1px solid var(--border);
+  position: relative;
+  background: transparent;
+  border-bottom: 3px solid rgba(242, 202, 224, 0.92);
   padding: 2rem 0 1.5rem;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(255,217,234,0.62), rgba(255,238,246,0.42));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 8px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(184,50,112,0.06), rgba(255,255,255,0.06));
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero h1 {
@@ -147,12 +179,9 @@ h6 {
   padding: 2.3rem 0;
 }
 
-/* Use a decorative background for the main services section so cards can show through */
-.services-page .section {
-  background-image: url("/img/background.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.services-page .section,
+.index-page .section {
+  background: transparent;
 }
 .alt-bg {
   background: var(--pink-50);
@@ -171,11 +200,11 @@ h6 {
 .card {
   position: relative;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.4);
-  border: 3px solid rgba(242, 202, 224, 0.65);
+  background-color: rgba(255, 255, 255, 0.86);
+  border: 3px solid rgba(242, 202, 224, 0.85);
   border-radius: 16px;
   padding: 1rem;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12),
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12),
     0 2px 8px rgba(232, 74, 147, 0.06) inset;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
@@ -186,7 +215,7 @@ h6 {
   /* soft decorative glow / 3D rim */
   content: "";
   position: absolute;
-  inset: -8px;
+  inset: -6px;
   border-radius: 20px;
   z-index: -1;
   background: linear-gradient(135deg, rgba(232,74,147,0.06), rgba(184,50,112,0.04));
@@ -215,7 +244,7 @@ feature-grid,
 footer-grid,
 contact-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 info-grid {
@@ -268,12 +297,6 @@ feature-grid {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-.plain-list,
-.price-list {
-  margin: 0;
-  padding-left: 1rem;
-}
-
 .price-list {
   list-style: none;
   padding-left: 0;
@@ -282,11 +305,9 @@ feature-grid {
 .price-list li {
   display: flex;
   justify-content: space-between;
-  gap: 0.5rem;
   padding: 0.45rem 0;
   position: relative;
 }
-
 .price-list li::after {
   /* thin two-tone separator that reads on light and darker backgrounds */
   content: "";
