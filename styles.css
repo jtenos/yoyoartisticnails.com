@@ -95,7 +95,7 @@ h6 {
 .hero {
   background: linear-gradient(140deg, var(--pink-100), #ffeefe);
   border-bottom: 1px solid var(--border);
-  padding: 5rem 0 4rem;
+  padding: 2rem 0 1.5rem;
 }
 
 .hero h1 {
@@ -147,8 +147,8 @@ h6 {
   padding: 2.3rem 0;
 }
 
-/* Use a decorative background for the main section so cards can show through */
-main.section {
+/* Use a decorative background for the main services section so cards can show through */
+.services-page .section {
   background-image: url("/img/background.webp");
   background-size: cover;
   background-position: center;
