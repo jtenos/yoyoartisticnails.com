@@ -246,6 +246,11 @@ feature-grid {
   padding: 0.45rem 0;
 }
 
+/* Invisible plus to equalize width where a visible "+" is not shown */
+.invis-plus {
+  visibility: hidden;
+}
+
 .link {
   color: var(--pink-700);
   font-weight: 600;
