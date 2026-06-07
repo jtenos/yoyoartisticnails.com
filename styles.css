@@ -385,6 +385,10 @@ feature-grid {
   .brand-wordmark {
     height: 2.2rem;
   }
+
+  .map-embed {
+    width: 275px;
+  }
 }
 
 /* Styles for service descriptions and notes (subtle, italic, readable) */
@@ -478,4 +482,28 @@ feature-grid {
     margin: 0 auto;
     object-fit: contain;
   }
+}
+
+/* === Service cards: no images for now ===
+   The service images are commented out in services.html, so the empty
+   image column would otherwise push each card's content to the right.
+   This block collapses that column and centers the content instead.
+   TO RESTORE the image-on-left layout: delete this entire block and
+   un-comment the <img> tags in services.html. */
+.service-row {
+  grid-template-columns: 1fr;
+}
+
+.service-media {
+  display: none;
+}
+
+.service-content {
+  text-align: center;
+}
+
+.service-content .price-list {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
 }
