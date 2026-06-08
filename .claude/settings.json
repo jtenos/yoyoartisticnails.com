@@ -1,8 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh issue *)",
-      "Bash(curl -s https://api.github.com/repos/jtenos/yoyoartisticnails.com/issues/9)"
+      "Bash(gh issue *)"
     ]
   }
 }
