@@ -48,3 +48,27 @@ function shuffleReviews(reviews) {
 }
 
 loadReviews();
+
+function showWelcomeModal() {
+	const overlay = document.getElementById("welcome-modal");
+	if (!overlay) return;
+
+	// Only show on the first visit — once dismissed, remember it for a year.
+	if (document.cookie.split("; ").includes("welcomeModalSeen=1")) return;
+
+	const closeButton = document.getElementById("welcome-modal-close");
+
+	function close() {
+		overlay.hidden = true;
+		document.cookie = "welcomeModalSeen=1; path=/; max-age=" + 60 * 60 * 24 * 365 + "; samesite=lax";
+	}
+
+	overlay.hidden = false;
+	closeButton.addEventListener("click", close);
+	overlay.addEventListener("click", (event) => {
+		// Close only when the overlay itself (not the dialog) is clicked.
+		if (event.target === overlay) close();
+	});
+}
+
+showWelcomeModal();
