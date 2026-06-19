@@ -351,6 +351,63 @@ feature-grid {
   box-shadow: 0 6px 18px rgba(255, 134, 183, 0.12);
 }
 
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(44, 23, 48, 0.55);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  width: min(440px, 100%);
+  background: var(--card);
+  border: 3px solid rgba(242, 202, 224, 0.85);
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2 {
+  margin: 0.25rem 0 0.6rem;
+}
+
+.modal .eyebrow {
+  margin: 0;
+}
+
+.modal .btn {
+  margin-top: 0.6rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.35rem;
+  line-height: 1;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--pink-700);
+}
+
 .site-footer {
   background: #35172f;
   color: #fff;
