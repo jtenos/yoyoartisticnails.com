@@ -1,2 +1,2 @@
 # yoyoartisticnails.com
-Public website for YoYo Nails
+Public website for [YoYo Artistic Nails](https://yoyoartisticnails.com)
