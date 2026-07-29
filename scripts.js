@@ -53,14 +53,21 @@ function showWelcomeModal() {
 	const overlay = document.getElementById("welcome-modal");
 	if (!overlay) return;
 
-	// Only show on the first visit — once dismissed, remember it for a year.
-	if (document.cookie.split("; ").includes("welcomeModalSeen=1")) return;
+	// Show at most once per day. The cookie stores the date it was last
+	// dismissed; if that isn't today (including the stale "=1" flag from the
+	// old "once ever" scheme), show the banner again and reset the timer.
+	const today = new Date().toISOString().slice(0, 10);
+	const seenValue = document.cookie
+		.split("; ")
+		.find((cookie) => cookie.startsWith("welcomeModalSeen="))
+		?.split("=")[1];
+	if (seenValue === today) return;
 
 	const closeButton = document.getElementById("welcome-modal-close");
 
 	function close() {
 		overlay.hidden = true;
-		document.cookie = "welcomeModalSeen=1; path=/; max-age=" + 60 * 60 * 24 * 365 + "; samesite=lax";
+		document.cookie = "welcomeModalSeen=" + today + "; path=/; max-age=" + 60 * 60 * 24 + "; samesite=lax";
 	}
 
 	overlay.hidden = false;
